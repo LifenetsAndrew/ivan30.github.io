@@ -7,6 +7,8 @@
                 typeWriter.play();
                 document.getElementById("overlay").style.display = "none";
                 document.getElementById("ivan").style.display = "block"
+                Array.from(document.getElementsByClassName("ivan-small"))
+                .forEach(ivan => ivan.style.display = "block");
             }
             
         </script>
@@ -57,6 +59,57 @@
                 top: calc(50% - 256px);
                 left: calc(50% - 256px);
             }
+
+            .ivan-small {
+                display: none;
+                position: fixed;
+                width: 40px;
+                height: 40px;
+                animation-name: fall;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            .ivan-small-1 {
+                animation-delay: 300ms;
+                left: 10%;
+                animation-duration: 3s;
+            }
+
+            .ivan-small-2 {
+                animation-delay: 100ms;
+                left: 30%;
+                animation-duration: 2.5s;
+            }
+
+            .ivan-small-3 {
+                animation-delay: 1s;
+                left: 50%;
+                animation-duration: 3.5s;
+            }
+
+            .ivan-small-4 {
+                animation-delay: 800ms;
+                left: 70%;
+                animation-duration: 1.3s;
+            }
+
+            .ivan-small-5 {
+                animation-delay: 400ms;
+                left: 90%;
+                animation-duration: 3.2s;
+            }
+
+            @keyframes fall {
+                from {
+                    top: 0;
+                    transform: rotateY(0);
+                }
+                to {
+                    top: 100%;
+                    transform: rotateY(360deg);
+                }
+            }
         </style>
 
     </head>
@@ -65,6 +118,11 @@
             <img id="play" onclick="play()" src="play.png" class="play">
         </div>
         <img src="ivan.png" id="ivan">
+        <img src="ivan.png" class="ivan-small ivan-small-1 ">
+        <img src="ivan.png" class="ivan-small ivan-small-2">
+        <img src="ivan.png" class="ivan-small ivan-small-3">
+        <img src="ivan.png" class="ivan-small ivan-small-4">
+        <img src="ivan.png" class="ivan-small ivan-small-5">
         <div class="images-container">
             <img src="ivan1.jpg">
             <img src="ivan2.jpg">
